@@ -1,0 +1,44 @@
+extends ../layout/events
+
+prepend vars
+  - var event = 'Freshman Orientation Week'
+
+block heading
+  p.aspect
+    span Orientate
+  h1 Freshmen Orientation Week
+  p.date 24-27 July
+
+block description
+  p
+    | Scared of becoming a geek in SoC? Scared of not becoming a geek in SoC?
+  p
+    | No matter what excuse you have, join us at School of Computing (SoC) 
+    | Freshmen Orientation Week (FOW)! 4D3N of fun that allows you to meet your 
+    | course mates and seniors, who will become crucial to your SoC life. On 
+    | top of that, gain a headstart in SoC by getting advices from friendly 
+    | seniors and immerse in the epic experience of One big SoC Family! 
+  p
+    | Before the school starts, let’s have fun.
+
+
+block main
+  figure.testimonial
+    blockquote
+      | My FOW experience was great! Had lots of fun with the activities 
+      | and it was good being able to get advice from my seniors 
+      | before school starts
+    figcaption Jun Kiat
+  section.gallery
+    figure
+      img(src=baseUrl + 'img/fow/fow1.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/fow/fow2.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/fow/fow3.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/fow/fow4.jpg', alt='')
+        
+  
+    
+    

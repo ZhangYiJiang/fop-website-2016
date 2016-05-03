@@ -1,0 +1,36 @@
+extends ../layout/events
+
+prepend vars
+  - var event = 'Freshman Social Camp'
+
+block heading
+  p.aspect
+    span Socialize
+  h1 Freshmen Social Camp
+  p.date 11-14 June
+    
+    
+block description
+  p
+    | Wet games! Beach day! Sleepovers! Want to get a close circle of university friends before
+    | university even starts? Longing to be a part of a close knit community but don’t know where to
+    | start? Then FSC is the event for you! Meet freshmen and seniors from all the SoC majors
+    | through 4 days of exciting activities! Share moments with one another, create precious
+    | memories together and indulge yourself in fun and laughter. All fun, no academics!
+
+block main
+  figure.testimonial
+    blockquote
+      | It was the best camp among all the camps that I went before. Meeting my seniors and new
+      | friends and having fun together.
+    figcaption Chase Tiong
+  section.gallery
+    figure
+      img(src=baseUrl + 'img/fsc/fsc1.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/fsc/fsc2.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/fsc/fsc3.jpg', alt='')
+
+    
+    

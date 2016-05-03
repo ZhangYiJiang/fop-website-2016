@@ -1,0 +1,83 @@
+extends ../layout/master
+
+block vars
+  - var title = 'Freshmen Orientation Project 2016 | NUS Computing';
+  - var bodyClass = 'index';
+  - var description = 'NUS School of Computing Freshmen Orientation Projects presents Virtutem Quattor. Join us to experience a summer like never before!'; 
+    
+block header
+  div.hero
+    div.content
+      h1
+        | Four Events.
+        br
+        | One Unforgettable Summer.
+      div.call
+        include ../components/call-to-action
+
+block main
+  .block-text.intro
+    p
+      | Are you an incoming freshman who wants to find out more about the school? Or do you simply
+      | want to make some friends and have fun?
+    p
+      | NUS Computing Freshmen Orientation Projects (FOP) 2016 presents to you 
+      em Virtutem Quattuor. 
+      | With an exciting lineup of events, we will help integrate into our Computing family in no time. At
+      | FOP, not only do you get the opportunity to meet other incoming freshmen, you will also meet
+      | seniors who can provide valuable advice to follow you through your University years. Join us
+      | this summer for the best freshmen experience you’ll ever have!
+
+  .projects
+    .project-row
+      a(href=url('fsc')).project.fsc
+        p.aspect 
+          span Socialize
+        h2 Freshmen Social Camp
+        p.date 11-14 June
+        
+        .description
+          p 
+            | Socialise in the summer holidays! Meet new friends from SoC 
+            | before University starts!
+
+      a(href=url('fow')).project.fow
+        p.aspect 
+          span Orientate
+        h2 Freshmen Orientation Week
+        p.date 24-27 July
+        
+        .description
+          p 
+            | Orientate yourself! Get more familiar with the school 
+            | environment and find out more about school life!
+
+
+    .project-row
+      a(href=url('rag-flag')).project.rag
+        p.aspect 
+          span Bond
+        h2 
+          | RAG 
+          span.amp & 
+          | FLAG 
+        
+        p.date May-August
+        
+        .description
+          p 
+            | Bond together as one SoC family! Construct magnificent 
+            | floats and dance together to show our SoC spirit!
+            
+          
+      a(href=url('bash')).project.bash
+        p.aspect 
+          span Celebrate 
+        h2 BASH 
+        p.date 12 August
+        
+        .description
+          p 
+            | Celebrate the end of Orientation with a blast! Join us 
+            | to crown the next Mr and Ms SoC!
+

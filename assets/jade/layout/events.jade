@@ -1,0 +1,13 @@
+extends master
+
+block vars
+  - var title = event + ' | FOP 2016 | NUS Computing';
+  - var bodyClass = 'event';
+
+block header
+  div(class=[slugify(event), 'hero'])
+    .heading
+      block heading
+    .description 
+      block description
+    

@@ -1,0 +1,26 @@
+footer.global {
+  text-align: center;
+  padding: 10px 10px 30px;
+
+  .bottom-call {
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+
+    p {
+      font-size: 32px;
+    }
+
+    .call a {
+      margin: 0 5px;
+      &:before {
+        background-color: #3B4FAD;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+

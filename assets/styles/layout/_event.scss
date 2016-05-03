@@ -1,0 +1,114 @@
+body.event {
+  .hero {
+    color: #fff;
+    height: 550px;
+    padding: 40px 40px 60px 20px;
+    background: #333 no-repeat center / cover;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .heading {
+      flex: 1 1 200px;
+      font-weight: bold;
+      padding: 0 8px;
+
+      h1 {
+        font-family: $headings-font-family;
+        font-size: 58px;
+        margin: 0;
+        font-weight: bold;
+        
+        &.big {
+          font-size: 72px;
+        }
+      }
+
+      h1, .date {
+        text-shadow: 0 1px 2px #000;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .aspect span {
+        padding: 1px 6px;
+        display: inline-block;
+      }
+
+      .date {
+        font-size: 24px;
+      }
+    }
+
+    .description {
+      width: 440px;
+      padding: 20px;
+      background: rgba(#000, .7);
+      text-shadow: 0 1px 0 rgba(#000, .4);
+    }
+
+    @media (max-width: 850px) {
+      display: block;
+      height: auto;
+      padding: 200px 20px 0;
+      
+      .description {
+        width: auto;
+        margin: 20px -20px 0 -20px;
+      }
+    }
+    
+    &.rag-flag {
+      background-image: url('#{$image-base}/rag/cover.jpg');
+      .aspect span { background: $brand-rag; }
+    }
+    
+    &.flag {
+      flex-direction: row-reverse;
+      .heading { text-align: right }
+      background-image: url('#{$image-base}/flag/cover.jpg');
+      .aspect span { background: $brand-rag; }
+    }
+    
+    &.freshman-social-camp {
+      background-image: url('#{$image-base}/fsc/cover.jpg');
+      .aspect span { background: $brand-fsc }
+    }
+    
+    &.freshman-orientation-week {
+      flex-direction: row-reverse;
+      .heading { text-align: right }
+      background-image: url('#{$image-base}/fow/cover.jpg');
+      .aspect span { background: $brand-fow }
+    }
+    
+    &.bash {
+      background-image: url('#{$image-base}/bash/cover.jpg');
+      .aspect span { background: $brand-bash }
+    }
+  }
+  
+  .testimonial {
+    margin: 40px auto;
+    
+    blockquote {
+      font-size: 28px;
+    }
+    
+    figcaption {
+      font-size: 22px;
+    }
+  }
+  
+  .gallery {
+    width: 100%;
+    
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

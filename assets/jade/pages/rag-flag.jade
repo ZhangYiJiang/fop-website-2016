@@ -1,0 +1,60 @@
+extends ../layout/events
+
+prepend vars
+  - var event = 'RAG & FLAG'; 
+
+block heading
+  p.aspect 
+    span Bond
+  h1.big 
+    | RAG 
+  p.date May-August
+  
+block description
+  p
+    | RAG is one of the biggest freshmen orientation events held by NUSSU, providing a 
+    | stage to showcase the creativity and talent of students from individual faculties. 
+    | This is our way of showing appreciation to our sponsors and the public who have 
+    | donated generously to us. Raggers, as we call ourselves, consists of floaters 
+    | who work on incredible float designs, dancers who stage jaw-dropping performances, 
+    | make-up artists who create our image and costume designers who make us shine. 
+  p
+    | We raggers are a family; freshmen to alumni, we’re constantly growing. Raggers form 
+    | strong friendships and unforgettable experiences that last throughout their 
+    | undergraduate years. Be a part of our family today!
+
+block main
+  .flag.hero
+    .heading
+      p.aspect
+        span Volunteer
+      h1.big
+        | FLAG Day
+      p.date 2 August
+    
+    .description
+      p
+        | Other than the exciting preparations for RAG day, there will also be a chance for 
+        | you to give back to the society by joining our FLAG events. We will be going 
+        | down to our beneficiary’s, MINDSville@Napiri for a fulfilling day of 
+        | interaction with their residents through fun activities. On top of that, 
+        | join us on our quest to give back to society by raising funds for 
+        | MINDSville@Napiri on FLAG day, which will be happening on the 2nd of August!
+  
+  figure.testimonial
+    blockquote
+      | RAG is an amazing opportunity to try something different, to learn something new. 
+      | You can learn new moves with dance, or let your creativity run free with float 
+      | and costumes. You don’t even have to have prior experience, just come down and 
+      | you’ll be taught everything you need to know. 
+    figcaption Matt C.
+  section.gallery
+    figure
+      img(src=baseUrl + 'img/rag/rag1.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/rag/rag2.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/rag/rag3.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/flag/flag1.jpg', alt='')
+          

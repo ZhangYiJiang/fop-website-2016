@@ -1,0 +1,29 @@
+extends ../layout/events
+
+prepend vars
+  - var event = 'BASH'
+
+block heading
+  p.aspect
+    span Celebrate 
+  h1.big BASH 
+  p.date 12 August
+
+block description
+  p
+    | The long awaited annual Bash is finally back! Enjoy a night of 
+    | fun-filled performances by the pageant candidates and a last opportunity 
+    | to mingle with your fellow seniors and future course mates. Join 
+    | in on the fun and games, and party the night away with the 
+    | newly crowned Mr and Ms SOC.
+
+block main
+  section.gallery
+    figure
+      img(src=baseUrl + 'img/bash/bash1.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/bash/bash2.jpg', alt='')
+    figure
+      img(src=baseUrl + 'img/bash/bash3.jpg', alt='')
+
+
