@@ -1,0 +1,47 @@
+{
+  "paths": {
+    "styles": "./assets/styles/", 
+    "templates": "./assets/jade/", 
+    "js": "./assets/js/",
+    "img": "./assets/img/",
+    "fonts": "./assets/fonts/",
+    "etc": "./assets/etc/"
+  },
+  
+  "env": "local", 
+  
+  "environments": {
+    "local": {
+      "locals": {
+        "baseUrl": "http://localhost:3000/"
+      },
+      "output": "./public-build/"
+    },
+
+    "staging": {
+      "locals": {
+        "baseUrl": "https://meebleforp.com/projects/fop/"
+      },
+
+      "output": "./staging-build/",
+
+      "reload": false,
+      "minify": true,
+      "sourcemaps": true,
+      "urlRewrite": true
+    },
+    
+    "production": {
+      "locals": {
+        "baseUrl": "http://freshmen.nuscomputing.com/"
+      }, 
+      
+      "output": "./production-build/",
+      
+      "reload": false,
+      "minify": true,
+      "sourcemaps": true,
+      "urlRewrite": true
+    }
+  }
+}
