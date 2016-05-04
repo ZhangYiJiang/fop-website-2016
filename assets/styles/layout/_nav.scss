@@ -18,6 +18,11 @@ nav.global {
   transition-property: padding, background;
   transition-duration: .3s;
   
+  @media (max-width: 500px) {
+    transform: scale(.75);
+    transform-origin: 0 0;
+  }
+  
   ul.nav {
     display: flex;
     padding: 0;
@@ -149,6 +154,7 @@ nav.global {
     
     @media (max-width: 500px) {
       text-align: center;
+      transform: scale(1);
 
       h1 {
         height: 60px;
