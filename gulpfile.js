@@ -3,7 +3,6 @@
 let path = require('path');
 
 let gulp = require('gulp');
-let preservetime = require('gulp-preservetime');
 let gulpif = require('gulp-if');
 let sass = require('gulp-sass');
 let jade = require('gulp-jade');
@@ -47,14 +46,12 @@ function copyAssets(dest) {
   _.each(assets, (name) => {
     gulp.src(config.paths[name] + '**')
       .pipe(newer(dest + name))
-      .pipe(gulp.dest(dest + name))
-      .pipe(preservetime());
+      .pipe(gulp.dest(dest + name));
   });
   
   gulp.src(config.paths.etc + 'favicon.ico')
     .pipe(newer(dest))
-    .pipe(gulp.dest(dest))
-    .pipe(preservetime());
+    .pipe(gulp.dest(dest));
 }
 
 function buildSass(out, minify, reloadBS, useSourcemap) {
@@ -74,8 +71,7 @@ function buildTemplates(locals, env, path) {
       locals: _.merge(locals, jadeUtils, { env }),
       pretty: '\t',
     }))
-    .pipe(gulp.dest(path))
-    .pipe(preservetime());
+    .pipe(gulp.dest(path));
 }
 
 gulp.task('templates', () => buildTemplates(env.locals, env, env.output));
