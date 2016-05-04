@@ -78,13 +78,15 @@ nav.global {
   
   .show-menu {
     padding: 30px 12px;
-    margin-top: -10px;
+    margin-top: -16px;
+    line-height: 1;
     
     .label {
       display: inline-block;
       font-size: 20px;
-      vertical-align: baseline;
       width: 0;
+      height: 24px;
+      vertical-align: baseline;
       
       transition: .3s width;
       overflow: hidden;
