@@ -106,9 +106,9 @@ body.event {
   .gallery {
     width: 100%;
     
-    img {
-      display: block;
-      width: 100%;
+    div.img {
+      height: 800px;
+      background: center / cover;
     }
   }
 }
