@@ -98,13 +98,14 @@ nav.global {
     }
     
     @media (max-width: 1040px) {
+      padding: 0 12px;
+      
       .full-only {
         width: 100%;
         float: none;
         display: none;
         clear: both;
         border-top: 1px solid rgba(255, 255, 255, .6);
-        margin-bottom: -10px;
         
         &.active {
           display: block;
