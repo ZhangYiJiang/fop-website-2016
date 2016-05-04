@@ -111,6 +111,7 @@ gulp.task('build', () => {
   // Copy .htaccess file if necessary 
   if (env.urlRewrite) {
     gulp.src(config.paths.etc + '.htaccess')
+      .pipe(newer(env.output))
       .pipe(gulp.dest(env.output));
   }
 });
