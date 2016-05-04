@@ -1,0 +1,49 @@
+.call {
+  display: block;
+
+  a {
+    margin-right: 12px;
+    margin-top: 4px;
+
+    padding: 14px 16px;
+    position: relative;
+
+    transform: translateZ(0);
+    backface-visibility: hidden;
+
+    &:hover {
+      // background: lighten($brand-primary, 15);
+      color: $brand-primary;
+    }
+
+    &:before {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      background: #fff;
+
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      transition: transform .3s;
+
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &:hover:before {
+      transform: scaleX(1);
+    }
+  }
+  
+  &.dark a {
+    &:before {
+      background: $brand-secondary;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
