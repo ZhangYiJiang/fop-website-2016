@@ -47,6 +47,13 @@ $('.menu-btn').click(function(evt){
   evt.stopPropagation();
 });
 
+$('.show-menu').click(function (evt) {
+  nav.addClass('full');
+  $('.menu-btn').addClass('activated');
+  $('.full-only').addClass('active');
+  evt.stopPropagation();
+});
+
 $('body').click(function(){
   $('.menu-btn').removeClass('activated');
   $('.full-only').removeClass('active');

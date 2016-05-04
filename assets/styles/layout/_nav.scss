@@ -12,8 +12,11 @@ nav.global {
   top: 20px;
   left: 20px;
   background: $home-bg;
+  white-space: nowrap;
   
-  transition: all .3s;
+  // transition: all .3s;
+  transition-property: padding, background;
+  transition-duration: .3s;
   
   ul.nav {
     display: flex;
@@ -41,14 +44,12 @@ nav.global {
       &:hover {
         color: #fff;
       }
-
-      span, abbr {
-      }
     }
     
     abbr {
       border: 0;
       text-decoration: none;
+      cursor: inherit;
     }
   }
   
@@ -57,12 +58,43 @@ nav.global {
     float: right;
   }
   
+  .menu-btn, .show-menu {
+    font-size: 32px;
+    background: none;
+    color: #fff;
+
+    &.activated, &:hover {
+      color: $brand-primary;
+    }
+  }
+
   .menu-btn {
     display: none;
+    
+    float: right;
+    margin: -8px;
+    padding: 30px 40px;
   }
   
-  abbr {
-    cursor: inherit;
+  .show-menu {
+    padding: 30px 12px;
+    margin-top: -10px;
+    
+    .label {
+      display: inline-block;
+      font-size: 20px;
+      vertical-align: baseline;
+      width: 0;
+      
+      transition: .3s width;
+      overflow: hidden;
+    }
+    
+    &:hover {
+      .label {
+        width: 105px;
+      }
+    }
   }
   
   &.full {
@@ -72,7 +104,8 @@ nav.global {
     
     padding: 12px;
     background: rgba(0, 0, 0, 0.9);
-    
+    white-space: normal;
+
     h1 {
       height: 85px;
       padding-top: 20px;
@@ -83,18 +116,9 @@ nav.global {
     .full-only {
       display: block;
     }
-
-    .menu-btn {
-      float: right;
-      font-size: 32px;
-      margin: -10px;
-      padding: 30px 40px;
-      background: none;
-      color: #fff;
-      
-      &.activated, &:hover {
-        color: $brand-primary;
-      }
+    
+    .show-menu {
+      display: none;
     }
     
     @media (max-width: 1040px) {
