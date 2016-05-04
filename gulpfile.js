@@ -65,8 +65,7 @@ function buildSass(out, minify, reloadBS, useSourcemap) {
     .pipe(sass({ outputStyle }).on('error', sass.logError))
     .pipe(gulpif(useSourcemap, sourcemaps.write('.')))
     .pipe(gulp.dest(out + 'css'))
-    // .pipe(preservetime())
-    .pipe(gulpif(reloadBS, reload({ stream: true })));
+    .pipe(gulpif(reloadBS, reload({ stream: true, match: '**/*.css' })));
 }
 
 function buildTemplates(locals, env, path) {
@@ -98,6 +97,7 @@ gulp.task('serve', ['sass', 'templates'], () => {
     config.paths.img + '**/*', 
     config.paths.fonts + '**/*'
   ], ['assets-watch']);
+  
   gulp.watch(config.paths.styles + '**/*.scss', ['sass']);
   gulp.watch(config.paths.templates + '**/*.jade', ['templates-watch']);
 });
