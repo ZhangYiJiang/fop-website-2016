@@ -22,7 +22,7 @@ let defaults = {
   urlRewrite: false,
 };
 
-let env = _.merge(defaults, config.environments[config.env]);
+let env = _.defaults(config.environments[config.env], defaults);
 
 
 let jadeUtils = {
@@ -68,7 +68,7 @@ function buildSass(out, minify, reloadBS, useSourcemap) {
 function buildTemplates(locals, env, path) {
   gulp.src(config.paths.templates + 'pages/*.jade')
     .pipe(jade({
-      locals: _.merge(locals, jadeUtils, { env }),
+      locals: _.merge({}, locals, jadeUtils, { env }),
       pretty: '\t',
     }).on('error', (err) => console.log(err)))
     .pipe(gulp.dest(path));
@@ -102,7 +102,7 @@ gulp.task('build', () => {
   if (!_.has(config.environments, argv.env))
     throw new Error(`Environment '${argv.env}' not found. Please check your config.json`);
   
-  let env = _.merge(defaults, config.environments[argv.env]);
+  let env = _.defaults(config.environments[argv.env], defaults);
   
   copyAssets(env.output);
   buildTemplates(env.locals, env, env.output);
