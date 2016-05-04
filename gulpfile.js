@@ -70,7 +70,7 @@ function buildTemplates(locals, env, path) {
     .pipe(jade({
       locals: _.merge(locals, jadeUtils, { env }),
       pretty: '\t',
-    }))
+    }).on('error', (err) => console.log(err)))
     .pipe(gulp.dest(path));
 }
 
