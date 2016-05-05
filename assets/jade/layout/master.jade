@@ -8,9 +8,10 @@ html
 
     if description
       meta(name='description', content=description)
-    
+      
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700%7CLato:400,900')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200&text=2016')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css")
     link(rel='stylesheet', href=baseUrl + 'css/app.css')
     link(rel='icon', href=baseUrl + 'favicon.ico')
     
@@ -73,12 +74,12 @@ html
           span.year 2016
       
       button.btn.menu-btn
-        span.glyphicon.glyphicon-menu-hamburger(aria-hidden='true')
+        i.fa.fa-bars(aria-hidden='true')
         span.sr-only Open Menu
         
       button.btn.show-menu
         span.label Show Menu
-        span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+        i.fa.fa-chevron-right(aria-hidden='true')
         
       .full-only
         ul.nav
@@ -112,14 +113,20 @@ html
         div.call.dark
           include ../components/call-to-action
       
-      p.copyright
-        | Comments? Enquiries? You can always reach us at 
-        a(href='mailto:fop@nuscomputing.com') fop@nuscomputing.com
-        br
+      p.icons
+        a(href='mailto:fop@nuscomputing.com')
+          i.fa.fa-envelope(aria-hidden='true')
+          span.label Email Us
+        a(href='https://www.youtube.com/channel/UCu-OQvWHAVHtZZ_1U5ODhAg')
+          i.fa.fa-youtube(aria-hidden='true')
+          span.label Our YouTube Channel
+        a(href='https://www.facebook.com/SoCFOP/')
+          i.fa.fa-facebook-official(aria-hidden='true')
+          span.label Follow us on Facebook
         a(href='https://github.com/ZhangYiJiang/fop-website-2016')
-          | Fork this project on Github. 
-        | Pull requests welcome!
-        br
+          i.fa.fa-github(aria-hidden='true')
+          span.label Fork this on GitHub
+      p.copyright
         | A project by 
         a(href='http://nuscomputing.com') NUS Computing
       

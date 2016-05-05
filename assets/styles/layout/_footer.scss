@@ -16,8 +16,63 @@ footer.global {
     }
   }
   
-  .copyright {
+  .icons {
     margin-top: 60px;
+
+    a {
+      padding: 12px 20px;
+      color: $text-color;
+
+      position: relative; 
+      
+      .fa {
+        font-size: 24px;
+        transition: .3s color;
+      }
+      
+      .label {
+        opacity: 0;
+
+        position: absolute;
+        transition: .3s all;
+        padding: 3px 6px;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -24px;
+        
+        color: #fff;
+        background: #333;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      &:hover {
+        .fa-facebook-official {
+          color: #3b5998;
+        }
+
+        .fa-youtube {
+          color: #e52d27;
+        }
+
+        .fa-envelope {
+          color: $brand-secondary;
+        }
+
+        .fa-github {
+          color: #999;
+        }
+        
+        .label {
+          top: -30px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  .copyright {
   }
 }
 
