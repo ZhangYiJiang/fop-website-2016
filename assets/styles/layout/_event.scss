@@ -110,5 +110,27 @@ body.event {
       height: 800px;
       background: center / cover;
     }
+
+    figure {
+      position: relative;
+    }
+    
+    .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      color: #fff;
+      background: rgba(#000, .7);
+
+      figcaption {
+        max-width: 700px;
+      }
+      
+      &.right figcaption {
+        float: right;
+        text-align: right;
+      }
+    }
   }
 }
