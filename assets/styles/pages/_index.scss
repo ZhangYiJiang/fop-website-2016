@@ -32,7 +32,6 @@ body.index {
   
   .projects {
     color: #fff;
-    padding-bottom: 20px;
     display: flex;
     align-content: stretch;
 
@@ -157,5 +156,44 @@ body.index {
       border-color: $brand-bash;
       .aspect span, p.date { background: $brand-bash; }
     }
+  }
+
+  .timeline-container {
+    background: #eee;
+  }
+  
+  .timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    h2 {
+      color: #999;
+    }
+    
+    h3, .event strong {
+      width: 100px;
+      text-align: right;
+    }
+    
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $brand-primary;
+      border-bottom: 3px solid;
+      margin-top: 32px;
+    }
+    
+    .event {
+      font-size: 20px;
+      
+      strong {
+        margin-right: 12px;
+        display: inline-block;
+      }
+      
+    }
+    
   }
 }
