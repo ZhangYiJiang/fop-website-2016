@@ -65,10 +65,10 @@ function buildSass(out, minify, reloadBS, useSourcemap) {
     .pipe(gulpif(reloadBS, reload({ stream: true, match: '**/*.css' })));
 }
 
-function buildTemplates(locals, env, path) {
+function buildTemplates(locals, path) {
   gulp.src(config.paths.templates + 'pages/*.jade')
     .pipe(jade({
-      locals: _.merge({}, locals, jadeUtils, { env }),
+      locals: _.merge({}, locals, jadeUtils),
       pretty: '\t',
     }).on('error', (err) => console.log(err)))
     .pipe(gulp.dest(path));
@@ -102,10 +102,10 @@ gulp.task('build', () => {
   if (!_.has(config.environments, argv.env))
     throw new Error(`Environment '${argv.env}' not found. Please check your config.json`);
   
-  let env = _.defaults(config.environments[argv.env], defaults);
-  
+  env = _.defaults(config.environments[argv.env], defaults);
+
   copyAssets(env.output);
-  buildTemplates(env.locals, env, env.output);
+  buildTemplates(env.locals, env.output);
   buildSass(env.output, env.minify, env.reload, env.sourcemaps);
   
   // Copy .htaccess file if necessary 
