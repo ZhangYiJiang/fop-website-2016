@@ -13,6 +13,7 @@ nav.global {
   left: 20px;
   background: $home-bg;
   white-space: nowrap;
+  color: #fff;
   
   // transition: all .3s;
   transition-property: padding, background;
@@ -45,16 +46,20 @@ nav.global {
       
       font-size: 20px;
       line-height: 1;
-      
-      &:hover {
-        color: #fff;
-      }
     }
     
     abbr {
       border: 0;
       text-decoration: none;
       cursor: inherit;
+    }
+  }
+  
+  .btn.btn-white {
+    color: rgba(#fff, .9);
+    
+    &:hover, &:active {
+      color: $brand-primary;
     }
   }
   
@@ -66,7 +71,6 @@ nav.global {
   .menu-btn, .show-menu {
     font-size: 32px;
     background: none;
-    color: #fff;
 
     &.activated, &:hover {
       color: $brand-primary;
