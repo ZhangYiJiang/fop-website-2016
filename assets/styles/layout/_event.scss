@@ -4,6 +4,7 @@ body.event {
     height: 550px;
     padding: 40px 40px 60px 20px;
     background: #333 no-repeat center / cover;
+    position: relative;
 
     display: flex;
     align-items: flex-end;
@@ -50,14 +51,38 @@ body.event {
       text-shadow: 0 1px 0 rgba(#000, .4);
     }
 
+    .and {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 1000;
+
+      width: 80px;
+      height: 80px;
+      padding: 6px;
+
+      background: $brand-rag;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px #000;
+
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
     @media (max-width: 850px) {
       display: block;
       height: auto;
       padding: 200px 20px 0;
-      
+
       .description {
         width: auto;
         margin: 20px -20px 0 -20px;
+      }
+      
+      &.rag-flag .description {
+        padding-bottom: 40px;
       }
     }
     
