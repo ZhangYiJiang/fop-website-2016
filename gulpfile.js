@@ -74,7 +74,7 @@ function buildTemplates(locals, path) {
     .pipe(gulp.dest(path));
 }
 
-gulp.task('templates', () => buildTemplates(env.locals, env, env.output));
+gulp.task('templates', () => buildTemplates(env.locals, env.output));
 gulp.task('sass', () => buildSass(env.output, env.minify, env.reload, env.sourcemaps));
 gulp.task('assets', () => copyAssets(env.output));
 
