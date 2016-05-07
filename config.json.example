@@ -2,11 +2,10 @@
   "paths": {
     "styles": "./assets/styles/", 
     "templates": "./assets/jade/", 
-    "js": "./assets/js/",
-    "img": "./assets/img/",
-    "fonts": "./assets/fonts/",
     "etc": "./assets/etc/"
   },
+  
+  "static": ["js", "img", "video"], 
   
   "env": "local", 
   

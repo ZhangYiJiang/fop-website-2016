@@ -39,17 +39,16 @@ let jadeUtils = {
   }
 };
 
+function staticPaths() {
+  return config.static.map((dir) => config.paths.static + dir + '/**');
+}
 
 function copyAssets(dest) {
-  let assets = ['js', 'img', 'fonts']; 
-  
-  _.each(assets, (name) => {
-    gulp.src(config.paths[name] + '**')
-      .pipe(newer(dest + name))
-      .pipe(gulp.dest(dest + name));
-  });
-  
   gulp.src(config.paths.etc + 'favicon.ico')
+    .pipe(newer(dest))
+    .pipe(gulp.dest(dest));
+  
+  return gulp.src(staticPaths(), { base: config.paths.static })
     .pipe(newer(dest))
     .pipe(gulp.dest(dest));
 }
@@ -57,7 +56,7 @@ function copyAssets(dest) {
 function buildSass(out, minify, reloadBS, useSourcemap) {
   let outputStyle = minify ? 'compressed' : 'nested';
   
-  gulp.src(config.paths.styles + 'app.scss')
+  return gulp.src(config.paths.styles + 'app.scss')
     .pipe(gulpif(useSourcemap, sourcemaps.init()))
     .pipe(sass({ outputStyle }).on('error', sass.logError))
     .pipe(gulpif(useSourcemap, sourcemaps.write('.')))
@@ -66,7 +65,7 @@ function buildSass(out, minify, reloadBS, useSourcemap) {
 }
 
 function buildTemplates(locals, path) {
-  gulp.src(config.paths.templates + 'pages/*.jade')
+  return gulp.src(config.paths.templates + 'pages/*.jade')
     .pipe(jade({
       locals: _.merge({}, locals, jadeUtils),
       pretty: '\t',
@@ -78,8 +77,8 @@ gulp.task('templates', () => buildTemplates(env.locals, env.output));
 gulp.task('sass', () => buildSass(env.output, env.minify, env.reload, env.sourcemaps));
 gulp.task('assets', () => copyAssets(env.output));
 
-gulp.task('templates-watch', ['templates'], () => setTimeout(reload, 200));
-gulp.task('assets-watch', ['assets'], () => setTimeout(reload, 200));
+gulp.task('templates-watch', ['templates'], reload);
+gulp.task('assets-watch', ['assets'], reload);
 
 gulp.task('serve', ['sass', 'templates'], () => {
   browserSync({
@@ -88,11 +87,7 @@ gulp.task('serve', ['sass', 'templates'], () => {
     }
   });
   
-  gulp.watch([
-    config.paths.js + '**/*.js', 
-    config.paths.img + '**/*', 
-    config.paths.fonts + '**/*'
-  ], ['assets-watch']);
+  gulp.watch(staticPaths(), ['assets-watch']);
   
   gulp.watch(config.paths.styles + '**/*.scss', ['sass']);
   gulp.watch(config.paths.templates + '**/*.jade', ['templates-watch']);
