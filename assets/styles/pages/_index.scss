@@ -3,11 +3,13 @@ body.index {
     height: 600px;
     background: url('#{$image-base}/tug-cover.jpg') center / cover no-repeat;
     position: relative;
+    overflow: hidden;
 
     .content {
       position: absolute;
       left: 20px;
       bottom: 60px;
+      z-index: 100;
     }
 
     h1 {
@@ -22,6 +24,36 @@ body.index {
       
       @media (max-width: 680px) {
         margin-right: 15px;
+      }
+    }
+    
+    .video-overlay {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: none;
+      background: rgba(#000, .5);
+      // box-shadow: inset 0 0 20px #000;
+    }
+    
+    &.has-video .video-overlay {
+      display: block;
+    }
+    
+    video {
+      position: absolute;
+      width: 100%;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      
+      @media (max-width: 1060px) {
+        width: auto;
+        height: 100%;
       }
     }
   }

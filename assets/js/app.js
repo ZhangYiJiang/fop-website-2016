@@ -58,3 +58,32 @@ $('body').click(function(){
   $('.menu-btn').removeClass('activated');
   $('.full-only').removeClass('active');
 });
+
+var videoBanner = $('.hero[data-video]');
+videoBanner.each(function () {
+  // Check connection speed and widow width 
+  if ('connection' in window.navigator && 
+      window.navigator.connection.type === 'cellular' ||
+      $(window).width() < 800)
+  {
+    return;
+  }
+  
+  // Feature detect for HTML5 video with h.264 support 
+  var video = document.createElement('video');
+  if (!('canPlayType' in video) || video.canPlayType('video/mp4') === '') {
+    return;
+  }
+  
+  video.src = videoBanner.data('video');
+  video.controls = false; 
+  video.loop = true;
+  
+  video.addEventListener('loadeddata', function() {
+    // If video has enough data
+    if (video.readyState > 3) {
+      videoBanner.append(video).addClass('has-video');
+      video.play();
+    }
+  });
+});

@@ -6,14 +6,15 @@ block vars
   - var description = 'NUS School of Computing Freshmen Orientation Projects presents Virtutem Quattor. Join us to experience a summer like never before!'; 
     
 block header
-  div.hero
-    div.content
+  .hero(data-video=baseUrl + 'video/background.mp4')
+    .content
       h1
         | Four Events.
         br
         | One Unforgettable Summer.
-      div.call
+      .call
         include ../components/call-to-action
+    .video-overlay
 
 block main
   .block-text.intro
