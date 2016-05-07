@@ -81,9 +81,13 @@ videoBanner.each(function () {
   
   video.addEventListener('loadeddata', function() {
     // If video has enough data
-    if (video.readyState > 3) {
-      videoBanner.append(video).addClass('has-video');
-      video.play();
+    if (video.readyState > 2) {
+      videoBanner.find('.video-overlay')
+        .fadeTo(400, 1, function(){ 
+          videoBanner.append(video); 
+          video.play(); 
+        })
+        .fadeTo(400, .5);
     }
   });
 });
