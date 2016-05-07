@@ -101,13 +101,17 @@ var signupDate = Date.UTC(2016, 4, 9, -8);
 
 if (signupDate > Date.now()) {
   $('.signup').addClass('disabled');
-  setInterval(function () {
+  
+  var updateTime = function () {
     var diff = (signupDate - Date.now()) / 1000,
-      s = Math.floor(diff % 60), 
-      m = Math.floor(diff / 60) % 60, 
+      s = Math.floor(diff % 60),
+      m = Math.floor(diff / 60) % 60,
       h = Math.floor(diff / 3600),
       timeString = [padLeft(h, 2), padLeft(m, 2), padLeft(s, 2)].join(':');
-    
+
     $('.signup').text('Sign Up Open In ' + timeString);
-  }, 1000);
+  };
+  
+  setInterval(updateTime, 1000);
+  updateTime();
 }
