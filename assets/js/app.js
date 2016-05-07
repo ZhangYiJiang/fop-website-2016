@@ -92,6 +92,10 @@ videoBanner.each(function () {
   });
 });
 
+function padLeft(s, l, c) {
+  s = s.toString();
+  return Array(l - s.length + 1).join(c || "0") + s;
+}
 
 var signupDate = Date.UTC(2016, 4, 9, -8);
 
@@ -102,7 +106,7 @@ if (signupDate > Date.now()) {
       s = Math.floor(diff % 60), 
       m = Math.floor(diff / 60) % 60, 
       h = Math.floor(diff / 3600),
-      timeString = [h, m, s].join(':');
+      timeString = [padLeft(h, 2), padLeft(m, 2), padLeft(s, 2)].join(':');
     
     $('.signup').text('Sign Up Open In ' + timeString);
   }, 1000);
