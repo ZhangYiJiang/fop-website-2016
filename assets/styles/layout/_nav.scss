@@ -5,8 +5,6 @@ nav.global, footer.global {
 }
 
 nav.global {
-  // background:-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0));
-  // background: rgba(0, 0, 0, .8);
   z-index: 500;
   position: fixed;
   top: 20px;
@@ -15,7 +13,7 @@ nav.global {
   white-space: nowrap;
   color: #fff;
   
-  transition: background .3s;
+  transition: all .3s;
   
   @media (max-width: 500px) {
     transform: scale(.75);
@@ -94,6 +92,7 @@ nav.global {
       width: 0;
       height: 24px;
       vertical-align: baseline;
+      text-align: left;
       
       transition: .3s width;
       overflow: hidden;
@@ -101,7 +100,7 @@ nav.global {
     
     &:hover {
       .label {
-        width: 105px;
+        width: 120px;
       }
     }
   }
@@ -163,6 +162,7 @@ nav.global {
         height: 60px;
         padding: 5px 0 0 90px;
         background-size: auto 100%;
+        position: relative;
 
         &:before {
           background-size: auto 100%;
