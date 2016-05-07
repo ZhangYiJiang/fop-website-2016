@@ -91,3 +91,19 @@ videoBanner.each(function () {
     }
   });
 });
+
+
+var signupDate = Date.UTC(2016, 4, 9, -8);
+
+if (signupDate > Date.now()) {
+  $('.signup').addClass('disabled');
+  setInterval(function () {
+    var diff = (signupDate - Date.now()) / 1000,
+      s = Math.floor(diff % 60), 
+      m = Math.floor(diff / 60) % 60, 
+      h = Math.floor(diff / 3600),
+      timeString = [h, m, s].join(':');
+    
+    $('.signup').text('Sign Up Open In ' + timeString);
+  }, 1000);
+}

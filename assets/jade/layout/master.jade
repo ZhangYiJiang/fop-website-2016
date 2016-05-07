@@ -94,8 +94,8 @@ html
               | & FLAG
           li: a.btn.btn-white(href=url('bash'))
             span BASH
-          li: a.btn.btn-primary(href='https://mysurvey.nus.edu.sg/EFM/se.ashx?s=54CCD14B2078EA2B',target='_blank')
-            span Join Our Mailing List
+          li: a.btn.btn-primary.signup(href='http://tiny.cc/FOP2016',target='_blank')
+            span Sign Up Now
 
     block header
     
@@ -104,9 +104,12 @@ html
     footer.global
       div.bottom-call
         p.block-text.text-center
-          | Stay tuned for sign-ups and more information!
+          | Stay tuned for more information!
         div.call.dark
-          include ../components/call-to-action
+          a.btn.btn-primary.btn-lg(href='https://www.facebook.com/SoCFOP/',target='_blank')
+            | Connect With Us on Facebook
+          a.btn.btn-primary.btn-lg(href='https://mysurvey.nus.edu.sg/EFM/se.ashx?s=54CCD14B2078EA2B',target='_blank')
+            | Join Our Mailing List
       
       p.icons
         a(href='mailto:fop@nuscomputing.com')

@@ -15,9 +15,7 @@ nav.global {
   white-space: nowrap;
   color: #fff;
   
-  // transition: all .3s;
-  transition-property: padding, background;
-  transition-duration: .3s;
+  transition: background .3s;
   
   @media (max-width: 500px) {
     transform: scale(.75);
@@ -122,6 +120,7 @@ nav.global {
       padding-top: 20px;
       padding-left: 100px;
       font-size: 38px;
+      position: absolute;
     }
 
     .full-only {
