@@ -81,7 +81,7 @@ videoBanner.each(function () {
   
   video.addEventListener('loadeddata', function() {
     // If video has enough data
-    if (video.readyState > 2) {
+    if (video.readyState > 3) {
       videoBanner.find('.video-overlay')
         .fadeTo(400, 1, function(){ 
           videoBanner.append(video); 
@@ -109,7 +109,7 @@ if (signupDate > Date.now()) {
       h = Math.floor(diff / 3600),
       timeString = [padLeft(h, 2), padLeft(m, 2), padLeft(s, 2)].join(':');
 
-    $('.signup').text('Sign Up Open In ' + timeString);
+    $('.signup').text('Signs Up Open In ' + timeString);
   };
   
   setInterval(updateTime, 1000);
