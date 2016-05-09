@@ -109,7 +109,7 @@ if (signupDate > Date.now()) {
       h = Math.floor(diff / 3600),
       timeString = [padLeft(h, 2), padLeft(m, 2), padLeft(s, 2)].join(':');
 
-    $('.signup').text('Signs Up Open In ' + timeString);
+    $('.signup').text('Sign Ups Open In ' + timeString);
   };
   
   setInterval(updateTime, 1000);
