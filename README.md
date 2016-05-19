@@ -1,3 +1,7 @@
+# This is an archive. Repo moved to https://github.com/NUSComputingDev/freshmen.nuscomputing.com
+
+----
+
 # NUS Computing Freshmen Orientation Project 2016 Website 
 
 ![](https://meebleforp.com/projects/fop/img/logo.png) 
